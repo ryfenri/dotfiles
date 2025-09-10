@@ -1,5 +1,5 @@
 # Use this file to configure your fish shell 
-source ~/.config/fish/sistem-config.fish
+source ~/.config/fish/system-config.fish
 
 # kitty
 alias icat="kitten icat"

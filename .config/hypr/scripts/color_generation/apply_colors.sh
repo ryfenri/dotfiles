@@ -86,7 +86,7 @@ apply_nvim() {
 
 apply_dunst() {
 	apply "dunstrc" "${config_dir}/dunst"
-	systemctl --user restart dunst
+	killall dunst && dunst &
 }
 
 apply_rmpc() {

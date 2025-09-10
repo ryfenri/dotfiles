@@ -1,6 +1,6 @@
 from ignis.widgets.window import Window
 
-from configuration.UI import UIConfig
+from configuration.UI import user_options
 import math
 
 # Which corner to cut: choose from "top-left", "top-right", "bottom-left", "bottom-right"
@@ -17,21 +17,21 @@ class CurvedCornerShape(Gtk.DrawingArea):
             "lg": 16,
             "xl": 32,
         }
-        self.set_content_width(self._border[UIConfig.bar.border_radius])
-        self.set_content_height(self._border[UIConfig.bar.border_radius])
+        self.set_content_width(self._border[user_options.bar.border_radius])
+        self.set_content_height(self._border[user_options.bar.border_radius])
         self._corner = corner
         self.set_draw_func(self.draw_shape)
-        UIConfig.bar.connect_option("border_radius", self.refresh)
-        UIConfig.colorscheme.connect_option("surface", self.refresh)
+        user_options.bar.connect_option("border_radius", self.refresh)
+        user_options.colorscheme.connect_option("surface", self.refresh)
         self.refresh()
 
     def refresh(self, *_):
-        self.set_content_width(self._border[UIConfig.bar.border_radius])
-        self.set_content_height(self._border[UIConfig.bar.border_radius])
+        self.set_content_width(self._border[user_options.bar.border_radius])
+        self.set_content_height(self._border[user_options.bar.border_radius])
         self.queue_draw()
 
     def draw_shape(self, widget, cr, width, height):
-        radius = self._border[UIConfig.bar.border_radius]
+        radius = self._border[user_options.bar.border_radius]
         rgba = self.get_surface_rgba() or (0, 0, 0, 0)
         # Clear background to transparent
         cr.set_source_rgba(*rgba)
@@ -78,7 +78,7 @@ class CurvedCornerShape(Gtk.DrawingArea):
             tuple: (r, g, b, a) values in 0-1 range
         """
 
-        hex_color = UIConfig.colorscheme.surface
+        hex_color = user_options.colorscheme.surface
         if hex_color.startswith("#"):
             hex_color = hex_color[1:]
         # Convert hex to RGBA (0-1 range)
@@ -109,32 +109,32 @@ class Border(Window):
             css_classes=["bg-surface"],
             namespace=f"border_{side}",
             exclusivity="exclusive",
-            width_request=UIConfig.bar.margin
-            if side in ["left", "right"] and side != UIConfig.bar.position
+            width_request=user_options.bar.margin
+            if side in ["left", "right"] and side != user_options.bar.position
             else -1,
-            height_request=UIConfig.bar.margin
-            if side in ["top", "bottom"] and side != UIConfig.bar.position
+            height_request=user_options.bar.margin
+            if side in ["top", "bottom"] and side != user_options.bar.position
             else -1,
-            visible=UIConfig.bar.all_sides,
+            visible=user_options.bar.all_sides,
         )
         self._side = side
-        UIConfig.bar.connect_option("position", self.refresh)
-        UIConfig.bar.connect_option("border_radius", self.refresh)
-        UIConfig.bar.connect_option("all_sides", self.refresh)
-        UIConfig.bar.connect_option("margin", self.refresh)
+        user_options.bar.connect_option("position", self.refresh)
+        user_options.bar.connect_option("border_radius", self.refresh)
+        user_options.bar.connect_option("all_sides", self.refresh)
+        user_options.bar.connect_option("margin", self.refresh)
 
     def refresh(self, *_):
         self.width_request = (
-            UIConfig.bar.margin
-            if self._side in ["left", "right"] and self._side != UIConfig.bar.position
+            user_options.bar.margin
+            if self._side in ["left", "right"] and self._side != user_options.bar.position
             else -1
         )
         self.height_request = (
-            UIConfig.bar.margin
-            if self._side in ["top", "bottom"] and self._side != UIConfig.bar.position
+            user_options.bar.margin
+            if self._side in ["top", "bottom"] and self._side != user_options.bar.position
             else -1
         )
-        self.visible = UIConfig.bar.all_sides
+        self.visible = user_options.bar.all_sides
 
 
 class Corner(Window):
@@ -149,16 +149,16 @@ class Corner(Window):
                 else []
             ),
             namespace=f"corner_{corner}",
-            visible=UIConfig.bar.all_sides,
+            visible=user_options.bar.all_sides,
             css_classes=["bg-none"],
         )
 
         self.set_decorated(False)
         self.child = CurvedCornerShape(corner=corner)
-        UIConfig.bar.connect_option("all_sides", self.refresh)
+        user_options.bar.connect_option("all_sides", self.refresh)
 
     def refresh(self, *_):
-        self.visible = UIConfig.bar.all_sides
+        self.visible = user_options.bar.all_sides
 
 
 Border(side="top")

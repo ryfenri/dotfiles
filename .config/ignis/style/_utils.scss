@@ -1,0 +1,11 @@
+@use "./global.scss" as *;
+
+.gif-container {
+  margin-top: 25px;
+  min-width: 50px;
+  min-height: 50px;
+}
+
+.gif {
+  border-radius: 99px;
+}

@@ -13,7 +13,8 @@ class AudioSlider(widgets.Window):
             )
         )
 
-        main_box = widgets.Box(
+        self.main_box = widgets.Box(
+            visible=False,
             vertical=True,
             valign="center",
             css_classes=["unset", "audio-slider-container"],
@@ -33,17 +34,9 @@ class AudioSlider(widgets.Window):
             ],
         )
 
-        self.revealer = widgets.Revealer(
-            visible=False,
-            child=main_box,
-            transition_type="slide_right",
-            transition_duration=400,
-            reveal_child=False,
-        )
-
         self.hover_box = widgets.EventBox(
             css_classes=["audio-slider-eventbox"],
-            child=[self.revealer],
+            child=[self.main_box],
             on_hover=self._on_hover,
             on_hover_lost=self._on_leave,
         )
@@ -71,10 +64,8 @@ class AudioSlider(widgets.Window):
 
     def _on_hover(self, *_):
         self.hover_box.add_css_class("expanded")
-        self.revealer.set_visible(True)
-        self.revealer.set_reveal_child(True)
+        self.main_box.set_visible(True)
 
     def _on_leave(self, *_):
         self.hover_box.remove_css_class("expanded")
-        self.revealer.set_visible(False)
-        self.revealer.set_reveal_child(False)
+        self.main_box.set_visible(False)

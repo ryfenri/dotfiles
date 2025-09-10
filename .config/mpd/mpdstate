@@ -1,9 +1,9 @@
-sw_volume: 50
+sw_volume: 60
 audio_device_state:1:PipeWire Output
-state: play
-current: 103
-time: 120.07000000000001
-random: 1
+state: pause
+current: 120
+time: 158.861
+random: 0
 repeat: 0
 single: 0
 consume: 0
@@ -40,92 +40,100 @@ playlist_begin
 25:nihmune, Shylily, Bao The Whale, Neuro-sama, camila, Lucy Pyre, evil - Bottom 2.mp3
 26:Warlord Colossus, Dozy Doe - Burn The Ships.mp3
 27:loreskrr - Butterfly.mp3
-28:Blxck - Canônico, Miguel O'Hara.mp3
-29:Konai, Kadu Brown - Cidade Lunar.mp3
-30:Veigh, Niink, Bvga Beatz, Supernova Ent, JHXW - Clickbait.mp3
-31:Sid, NOG, André Nine, Chiocki - Sitio do Tio Harry.mp3
-32:Thegust Mc's - Meio a Meio.mp3
-33:Lil Peep - Life is Beautiful.mp3
-34:Matuê, Rich The Kid - Conexões de Máfia (feat. Rich The Kid).mp3
-35:Lutz, Lookalike - Cura.mp3
-36:VirginGod - deixe seu recado.mp3
-37:Isaa Corva, Sugi Aoki - Die With A Smile.mp3
-38:Veigh, Bvga Beatz, Prod Malax, Supernova Ent - Novo Balanço.mp3
-39:LorShaw, Jayeric - Dragões.mp3
-40:Dybbukk - Enim er'u.mp3
-41:Evanescence - Bring Me To Life.mp3
-42:Kudasaibeats - The Girl I Haven't Met.mp3
-43:twikipedia - figure me out.mp3
-44:twikipedia - anyone but you.mp3
-45:twikipedia - final feliz.mp3
-46:Surf Curse - Freaks.mp3
-47:PinocchioP - God-ish.mp3
-48:kamaitachi - Triste Satan.mp3
-49:twikipedia, SEBii - hotel.mp3
-50:Yago Oproprio, Rô Rosa, Skeeter Beats - Imprevisto.mp3
-51:Joji - worldstar money (interlude).mp3
-52:Nirvana - All Apologies.mp3
-53:DaniBoy., Stone021 - Planos (SpeedPlug).mp3
-54:Magyn - kyoto.mp3
-55:kamaitachi - Lana.mp3
-56:VirginGod, twikipedia - neymar.mp3
-57:MISSIO - Twisted.mp3
-58:Cjbeards - Maestro.mp3
-59:KayBlack, Wall Hein, AMUSIK - Maturidade.mp3
-60:Thegust Mc's - Meio a Meio II.mp3
-61:lilgiela33 - Merdas Acontecem.mp3
-62:INTERWORLD - METAMORPHOSIS.mp3
-63:Guilherme Cabral - Meus Defeitos.mp3
-64:Bohnes - Middle Finger.mp3
-65:ikilledgenji, Rivatto - mil e uma noites.mp3
-66:Nirvana - The Man Who Sold The World - Live.mp3
-67:$uicideboy$ - Kill Yourself (Part III).mp3
-68:Nick Saraiva - Natsuki.mp3
-69:Nirvana - Smells Like Teen Spirit.mp3
-70:Nirvana - Come As You Are.mp3
-71:Nirvana - About A Girl.mp3
-72:Dido - Thank You.mp3
-73:Iron Master, Eveline Teach - Para Todo Sempre  MiSide  Iron Master.mp3
-74:timmies, Shiloh Dynasty - Tell Me Why I'm Waiting.mp3
-75:Duzz, Rubro - Patrício's.mp3
-76:Big Rush, Plumasdecera - BAIXA TEMPERATURA.mp3
-77:高橋あず美, Lotus Juice, アトラスサウンドチーム, ATLUS GAME MUSIC - It's Going Down Now.mp3
-78:Dexhenry, pedrwthekid, nateshawty, rxmisz - planos.mp3
-79:Big Rush - Poxa.mp3
-80:Big Rush - Eu posso ser mais.mp3
-81:Big Rush - A Última Queda do Amor.mp3
-82:Apricot, Zentreya - Rainy Day.mp3
-83:TakaB - Rei dos Pesadelos.mp3
-84:BONES - HDMI.mp3
-85:Arizona Zervas - ROXANNE.mp3
-86:pluglip - Rpg.mp3
-87:miseryswin - feiticeiro (eu merecia essa dança tanto assim).mp3
-88:VirginGod - sera q ela volta.mp3
-89:Men I Trust - Show Me How.mp3
-90:Joji - Die For You.mp3
-91:Big Rush, VirginGod - SÓLIDO.mp3
-92:twikipedia, midwxst - born to pwn.mp3
-93:ThxSoMch - SPIT IN MY FACE!.mp3
-94:twikipedia - understand.mp3
-95:VMZ - Suzume.mp3
-96:Somber, Warlord Colossus - Take Me Away.mp3
-97:Konai - Te Vi na Rua Ontem.mp3
-98:Pearl Jam - Black.mp3
-99:klouvz, Raryfer, CT - tesla.mp3
-100:Glorb - The Bottom 3.mp3
-101:Mr.Kitty - After Dark.mp3
-102:twikipedia, funeral - titles.mp3
-103:Sadstation, Zant - Tô Meio Apaixonado.mp3
-104:LKZ na Voz - Vampira.mp3
-105:VirginGod, Big Rush - Amor & Drogas.mp3
-106:girl in red - we fell in love in october.mp3
-107:結束バンド - 惑う星.mp3
-108:結束バンド - あのバンド.mp3
-109:結束バンド - ドッペルゲンガー.mp3
-110:結束バンド - 今、僕、アンダーグラウンドから.mp3
-111:結束バンド - 青春コンプレックス.mp3
-112:結束バンド - ギターと孤独と蒼い惑星.mp3
-113:結束バンド - 星座になれたら.mp3
-114:Arizona Zervas - ROXANNE.mp3
-115:Blxck - Canônico, Miguel O'Hara.mp3
+28:Konai, Kadu Brown - Cidade Lunar.mp3
+29:Veigh, Niink, Bvga Beatz, Supernova Ent, JHXW - Clickbait.mp3
+30:Sid, NOG, André Nine, Chiocki - Sitio do Tio Harry.mp3
+31:Thegust Mc's - Meio a Meio.mp3
+32:Lil Peep - Life is Beautiful.mp3
+33:Matuê, Rich The Kid - Conexões de Máfia (feat. Rich The Kid).mp3
+34:Lutz, Lookalike - Cura.mp3
+35:VirginGod - deixe seu recado.mp3
+36:Isaa Corva, Sugi Aoki - Die With A Smile.mp3
+37:Veigh, Bvga Beatz, Prod Malax, Supernova Ent - Novo Balanço.mp3
+38:LorShaw, Jayeric - Dragões.mp3
+39:Dybbukk - Enim er'u.mp3
+40:Evanescence - Bring Me To Life.mp3
+41:Kudasaibeats - The Girl I Haven't Met.mp3
+42:twikipedia - figure me out.mp3
+43:twikipedia - anyone but you.mp3
+44:twikipedia - final feliz.mp3
+45:Surf Curse - Freaks.mp3
+46:PinocchioP - God-ish.mp3
+47:kamaitachi - Triste Satan.mp3
+48:twikipedia, SEBii - hotel.mp3
+49:Yago Oproprio, Rô Rosa, Skeeter Beats - Imprevisto.mp3
+50:Joji - worldstar money (interlude).mp3
+51:Nirvana - All Apologies.mp3
+52:DaniBoy., Stone021 - Planos (SpeedPlug).mp3
+53:Magyn - kyoto.mp3
+54:kamaitachi - Lana.mp3
+55:VirginGod, twikipedia - neymar.mp3
+56:MISSIO - Twisted.mp3
+57:Cjbeards - Maestro.mp3
+58:KayBlack, Wall Hein, AMUSIK - Maturidade.mp3
+59:Thegust Mc's - Meio a Meio II.mp3
+60:lilgiela33 - Merdas Acontecem.mp3
+61:INTERWORLD - METAMORPHOSIS.mp3
+62:Guilherme Cabral - Meus Defeitos.mp3
+63:Bohnes - Middle Finger.mp3
+64:ikilledgenji, Rivatto - mil e uma noites.mp3
+65:Nirvana - The Man Who Sold The World - Live.mp3
+66:$uicideboy$ - Kill Yourself (Part III).mp3
+67:Nick Saraiva - Natsuki.mp3
+68:Nirvana - Smells Like Teen Spirit.mp3
+69:Nirvana - Come As You Are.mp3
+70:Nirvana - About A Girl.mp3
+71:Dido - Thank You.mp3
+72:Iron Master, Eveline Teach - Para Todo Sempre  MiSide  Iron Master.mp3
+73:timmies, Shiloh Dynasty - Tell Me Why I'm Waiting.mp3
+74:Duzz, Rubro - Patrício's.mp3
+75:Big Rush, Plumasdecera - BAIXA TEMPERATURA.mp3
+76:高橋あず美, Lotus Juice, アトラスサウンドチーム, ATLUS GAME MUSIC - It's Going Down Now.mp3
+77:Dexhenry, pedrwthekid, nateshawty, rxmisz - planos.mp3
+78:Big Rush - Poxa.mp3
+79:Big Rush - Eu posso ser mais.mp3
+80:Big Rush - A Última Queda do Amor.mp3
+81:Apricot, Zentreya - Rainy Day.mp3
+82:TakaB - Rei dos Pesadelos.mp3
+83:BONES - HDMI.mp3
+84:Arizona Zervas - ROXANNE.mp3
+85:pluglip - Rpg.mp3
+86:miseryswin - feiticeiro (eu merecia essa dança tanto assim).mp3
+87:VirginGod - sera q ela volta.mp3
+88:Men I Trust - Show Me How.mp3
+89:Joji - Die For You.mp3
+90:Big Rush, VirginGod - SÓLIDO.mp3
+91:twikipedia, midwxst - born to pwn.mp3
+92:ThxSoMch - SPIT IN MY FACE!.mp3
+93:twikipedia - understand.mp3
+94:VMZ - Suzume.mp3
+95:Somber, Warlord Colossus - Take Me Away.mp3
+96:Konai - Te Vi na Rua Ontem.mp3
+97:Pearl Jam - Black.mp3
+98:klouvz, Raryfer, CT - tesla.mp3
+99:Glorb - The Bottom 3.mp3
+100:Mr.Kitty - After Dark.mp3
+101:twikipedia, funeral - titles.mp3
+102:Sadstation, Zant - Tô Meio Apaixonado.mp3
+103:LKZ na Voz - Vampira.mp3
+104:VirginGod, Big Rush - Amor & Drogas.mp3
+105:girl in red - we fell in love in october.mp3
+106:結束バンド - 惑う星.mp3
+107:結束バンド - あのバンド.mp3
+108:結束バンド - ドッペルゲンガー.mp3
+109:結束バンド - 今、僕、アンダーグラウンドから.mp3
+110:結束バンド - 青春コンプレックス.mp3
+111:結束バンド - ギターと孤独と蒼い惑星.mp3
+112:結束バンド - 星座になれたら.mp3
+113:Arizona Zervas - ROXANNE.mp3
+114:Blxck - Canônico, Miguel O'Hara.mp3
+115:albinzzs - gothic shawty [reecesowavy].mp3
+116:miseryswin - veneno.mp3
+117:Marcs Shawty, mavyrmldy - design de anime 2.mp3
+118:Gothic Shawty!_(remix)w_Albinzzs & Rivatto.mp3
+119:Plumasdecera & BIG RUSH “Jardim".mp3
+120:Caio Ocean • “Margem”.mp3
+121:teenage dream.mp3
+122:twikipedia - eu já sei (p. the strokes).mp3
+123:unreal [prod. acey].mp3
 playlist_end

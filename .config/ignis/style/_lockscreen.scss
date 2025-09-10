@@ -1,0 +1,52 @@
+@use "./global.scss" as *;
+
+.lockscreen-main {
+}
+
+.lockscreen-background {
+  background-color: rgba(0,0,0,0.3);
+}
+
+.lockscreen-upper {
+  margin-top: 130px;
+  margin-bottom: 50px;
+}
+
+.lockscreen-profile-container {
+  min-width: 50px;
+  min-height: 50px;
+}
+
+.lockscreen-profile {
+  border-radius: 99px;
+  background: white;
+  border: 2px solid $primary;
+}
+
+.lockscreen-input {
+  background: $background;
+  color: $secondary;
+  border-radius: 99px;
+  padding: 8px 16px;
+  margin-top: 50px;
+  letter-spacing: 0.15rem;
+}
+
+.lockscreen-lower {
+  margin-top: 400px;
+}
+
+.lockscreen-lower-utils {
+  margin-top: 50px;
+}
+
+.lockscreen-lower-text {
+  color: $primary;
+  font-weight: 700;
+}
+
+.error-msg {
+  color: $error;
+  font-weight: 700;
+  margin-top: 20px;
+}

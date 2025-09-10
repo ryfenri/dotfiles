@@ -13,6 +13,21 @@
   min-height: 170px;
 }
 
+.wallpapers-scroll scrollbar {
+	min-height: 0;
+	padding: 0;
+	background: none;
+	border: 0;
+}
+
+.wallpapers-scroll scrollbar range slider {
+	min-height: 0;
+	min-width: 10px;
+	padding: 0;
+	margin: 0;
+	background: $primary;
+}
+
 .wallpapers-container {
   margin: 30px 30px;
 }
@@ -27,7 +42,7 @@
   transition: all 0.3s ease-in-out;
 
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 }
 

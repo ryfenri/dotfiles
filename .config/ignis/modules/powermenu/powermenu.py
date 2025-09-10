@@ -1,8 +1,11 @@
 import asyncio
+import os
+
 from ignis import widgets
 from ignis import utils
 from ignis.window_manager import WindowManager
 from typing import Callable
+from utils.gif_player import Gif
 
 window_manager = WindowManager.get_default()
 
@@ -53,7 +56,7 @@ class SuspendButton(PowermenuButton):
 
     def _invoke(self, *args) -> None:
         window_manager.close_window("rybelika_POWERMENU")
-        create_exec_task("systemctl suspend && hyprlock")
+        create_exec_task("systemctl suspend")
 
 
 class HyprlandExitButton(PowermenuButton):
@@ -62,6 +65,15 @@ class HyprlandExitButton(PowermenuButton):
             label="Sign out",
             icon_name="system-log-out-symbolic",
             on_click=lambda *args: create_exec_task("hyprctl dispatch exit 0"),
+        )
+
+
+class PowermenuLauncher(widgets.Button):
+    def __init__(self, size: int = 18):
+        super().__init__(
+            on_click=lambda x: window_manager.toggle_window("rybelika_POWERMENU"),
+            child=widgets.Icon(image="circle-power-symbolic", pixel_size=size),
+            css_classes=["powermenu-launch", "unset"]
         )
 
 
@@ -79,6 +91,7 @@ class Powermenu(widgets.Window):
                         RebootButton(),
                     ]
                 ),
+                Gif(os.path.expanduser("~/Videos/ryo_sleepy.gif"), 125, 150),
                 widgets.Box(
                     child=[
                         SuspendButton(),

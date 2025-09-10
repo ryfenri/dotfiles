@@ -1,0 +1,42 @@
+@use "./global.scss" as *;
+
+.audio-slider-eventbox {
+  background: $background;
+  color: $onSurfaceVariant;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  min-width: 5px;
+  min-height: 200px;
+  transition: 0.1s ease;
+
+  &.expanded {
+    min-width: 75px;
+  }
+}
+
+.audio-slider-container {
+  margin-left: 15px;
+}
+
+.audio-slider-icon {
+  color: $primary;
+  margin-bottom: 10px;
+}
+
+.audio-slider trough {
+  min-height: 100px;
+  min-width: 0.7rem;
+  background-color: $onSurfaceVariant;
+  border-radius: 2rem;
+
+  highlight {
+    background-color: $secondary;
+  }
+
+  slider {
+    background-color: $primary;
+    min-height: 20px;
+    min-width: 20px;
+    border-radius: 1rem;
+  }
+}

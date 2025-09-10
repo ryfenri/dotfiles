@@ -5,20 +5,11 @@ import asyncio
 from ignis import widgets, utils
 from ignis.window_manager import WindowManager
 
-from .widgets import Workspaces, border
-from services import Audio, Tray
+from modules import PowermenuLauncher
+from .widgets import Workspaces, border, Clock
+from services import Audio, Tray, Network
 
 window_manager = WindowManager.get_default()
-
-
-class Clock(widgets.Label):
-    def __init__(self):
-        super().__init__(label="", css_classes=["clock"])
-        utils.Poll(1000, lambda x: self.update_time())
-
-    def update_time(self):
-        text = datetime.datetime.now().strftime("%I\n%M\n%p")
-        self.set_label(text)
 
 
 class Bar(widgets.Window):
@@ -64,13 +55,10 @@ class Bar(widgets.Window):
                     halign="center",
                     spacing=8,
                     child=[
+                        Network(),
                         Audio(),
                         Clock(),
-                        widgets.Button(
-                            on_click=lambda x: window_manager.toggle_window("rybelika_POWERMENU"),
-                            child=widgets.Icon(image="circle-power-symbolic", pixel_size=18),
-                            css_classes=["powermenu-launch", "unset"]
-                        )
+                        PowermenuLauncher()
                     ]
                 ),
             ),

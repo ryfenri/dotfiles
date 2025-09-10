@@ -94,7 +94,9 @@ wall() {
 
 	#waybar > /dev/null &
 	#ags run &
+
 	goignis reload
+
 	pkill -USR2 cava
 
 	sleep 0.5

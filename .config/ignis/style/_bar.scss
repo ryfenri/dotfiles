@@ -23,6 +23,7 @@
     background: black;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+	transition: 0.3s ease-in;
 }
 
 .workspace {
@@ -30,7 +31,6 @@
 	border-radius: 1rem;
     padding: 6px;
 	min-height: 1px;
-	transition: 0.3s;
 
     &:hover {
 	  background-color: $onSecondaryContainer;
@@ -48,7 +48,6 @@
 
 .powermenu-launch {
   border-radius: 7px;
-  min-width: 7px;
   color: $secondary;
   transition: color 0.2s ease-in;
 
@@ -61,6 +60,7 @@
   &:hover {
     background: lighten($surfaceContainer, 5%);
   }
+
   transition: 0.3s;
   border-radius: 10rem;
   min-width: 8rem;
@@ -95,44 +95,13 @@
 
 .audio-text {
   color: $onSurfaceVariant;
+  min-width: 10px;
 }
 
-.audio-slider-eventbox {
-  background: $background;
-  color: $onSurfaceVariant;
-  border-top-left-radius: 1rem;
-  border-bottom-left-radius: 1rem;
-  min-width: 5px;
-  min-height: 200px;
-
-  &.expanded {
-    min-width: 75px;
-  }
+.network-container {
+  margin-bottom: 5px;
 }
 
-.audio-slider-container {
-  margin-left: 15px;
-}
-
-.audio-slider-icon {
+.network-icon {
   color: $primary;
-  margin-bottom: 10px;
-}
-
-.audio-slider trough {
-  min-height: 100px;
-  min-width: 0.7rem;
-  background-color: $onSurfaceVariant;
-  border-radius: 2rem;
-
-  highlight {
-    background-color: $secondary;
-  }
-
-  slider {
-    background-color: $primary;
-    min-height: 20px;
-    min-width: 20px;
-    border-radius: 1rem;
-  }
 }

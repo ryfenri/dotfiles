@@ -5,12 +5,12 @@ from pathlib import Path
 from ignis import widgets, utils
 from PIL import Image
 
-from configuration.UI import UIConfig
+from configuration.UI import user_options
 
 
 class WallpaperImage(widgets.Box):
     def __init__(self):
-        self.thumb_dir = Path(f"{UIConfig.Wallpaper.path}/.thumbnails").expanduser()
+        self.thumb_dir = Path(f"{user_options.wallpaper.path}/.thumbnails").expanduser()
         self.thumb_dir.mkdir(exist_ok=True)
         self.wallpapers = self._get_wallpapers()
 
@@ -47,13 +47,14 @@ class WallpaperImage(widgets.Box):
         )
 
     def _on_wallpaper_click(self, img_path: Path):
+        user_options.wallpaper.current_wallpaper = str(img_path)
         asyncio.create_task(utils.exec_sh_async(str(os.path.expanduser(f"~/.config/hypr/scripts/color_generation/config_generate.sh {img_path}"))))
 
     def _get_wallpapers(self):
         extensions = {".jpg", "jpeg", ".gif", ".png", ".jfif", ".webp"}
 
         return [
-            file for file in UIConfig.Wallpaper.path.iterdir()
+            file for file in user_options.wallpaper.path.iterdir()
             if file.is_file() and file.suffix.lower() in extensions
         ]
 
