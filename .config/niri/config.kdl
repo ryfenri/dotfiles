@@ -246,6 +246,7 @@ layout {
 
 // spawn-sh-at-startup "swww-daemon"
 spawn-at-startup "noctalia-shell"
+spawn-at-startup "udiskie" "--no-automount" "--smart-tray"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"

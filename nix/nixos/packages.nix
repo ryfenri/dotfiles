@@ -33,6 +33,7 @@ in {
 		eza
 		fastfetch
 		tmux
+		udiskie
 
 		xwayland-satellite
 
