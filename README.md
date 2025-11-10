@@ -8,17 +8,17 @@
 
 ## Components
 
-- **WM:** [hyprland](https://hyprland.org/)
+- **WM:** [niri](https://yalter.github.io/niri/)
 - **OS:** [nixos](https://endeavouros.com/)
 - **Terminal:** [kitty](https://sw.kovidgoyal.net/kitty/)
 - **Shell:** [zsh](https://wiki.archlinux.org/title/Zsh)
 - **File Manager:** [nautilus](https://github.com/GNOME/nautilus)
 - **Application Launcher:** [rofi](https://github.com/davatorium/rofi)
-- **Bar:** [waybar](https://github.com/Alexays/Waybar)
-- **Compositor:** [hyprland](https://github.com/hyprwm/Hyprland)
-- **Notification:** [swaync](https://github.com/ErikReider/SwayNotificationCenter)
+- **Bar:** [noctalia-shell](https://docs.noctalia.dev/)
+- **Compositor:** [niri](https://yalter.github.io/niri/)
+- **Notification:** [noctalia-shell](https://docs.noctalia.dev/)
 
 ## Preview
 
-![Preview1](./assets/250108_23h40m06s_screenshot.png)
-![Preview1](./assets/250108_23h40m18s_screenshot.png)
+![Preview1](./assets/example1.png)
+![Preview1](./assets/example2.png)
