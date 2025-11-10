@@ -4,6 +4,7 @@ src_dir="${HOME}/.config/hypr/scripts"
 cache_dir="${HOME}/.cache/material-colors"
 config_dir="${HOME}/.config"
 templates_dir="${src_dir}/color_generation/templates"
+dotfiles="${HOME}/.local/share/dotfiles"
 
 color_names=$(cat "${cache_dir}/material-colors.scss" | cut -d ":" -f1)
 color_values=$(cat "${cache_dir}/material-colors.scss" | cut -d ":" -f2 | cut -d " " -f2 | cut -d ";" -f1)
@@ -30,9 +31,10 @@ apply() {
 	for i in "${!color_names_list[@]}"; do
 		if [[ "$filename" == *"hypr"* ]] || [[ "$filename" = "color.ini" ]]; then
 			sed -i "s/{{ ${color_names_list[$i]} }}/${color_values_list[$i]#\#}/g" "${cache_dir}/${filename}"
+		else
+			sed -i "s/{{ ${color_names_list[$i]} }}/${color_values_list[$i]}/g" "${cache_dir}/${filename}"
 		fi
 
-		sed -i "s/{{ ${color_names_list[$i]} }}/${color_values_list[$i]}/g" "${cache_dir}/${filename}"
 	done
 	
 	if [ "$filename" = "colorscheme.lua" ]; then
@@ -46,6 +48,14 @@ apply() {
 apply_kitty() {
 	apply "colors-kitty.conf" "${config_dir}"/kitty
 	pkill -10 kitty
+}
+
+apply_ghostty() {
+	apply "colors-ghostty" "${config_dir}"/ghostty
+}
+
+apply_wezterm() {
+	apply "colors-wezterm.lua" "${config_dir}"/wezterm
 }
 
 
@@ -71,14 +81,37 @@ apply_cava() {
 }
 
 apply_nvim() {
-	apply "colorscheme.lua" "${config_dir}/nvim/lua/rap1/core" "nvim"
+	apply "colorscheme.lua" "${config_dir}/nvim/lua/${USER}/core" "nvim"
 }
 
+apply_dunst() {
+	apply "dunstrc" "${config_dir}/dunst"
+	killall dunst && dunst &
+}
 
-apply_kitty &
+apply_rmpc() {
+	apply "ryarch.ron" "${dotfiles}/.config/rmpc/themes"
+}
+
+apply_foot() {
+	apply "colors-foot.ini" "${dotfiles}/.config/foot/"
+}
+
+apply_discord() {
+	apply "rycord.sistem24.css" "${dotfiles}/.config/Vencord/themes/" "Rycord"
+}
+
 apply_waybar &
 apply_hyprland &
 apply_rofi &
-apply_spicetify_theme &
+#apply_spicetify_theme &
 apply_cava &
 apply_nvim &
+apply_dunst &
+apply_rmpc &
+
+#apply_foot &
+apply_kitty &
+apply_ghostty &
+apply_wezterm &
+apply_discord &

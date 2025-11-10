@@ -1,144 +1,91 @@
-{ pkgs, ... }: {
-	nixpkgs.config.allowUnfree = true;
-  
+{pkgs, inputs, ...}:
+let
+	custom_sddm_astronaut = pkgs.sddm-astronaut.override {
+		embeddedTheme = "pixel_sakura";
+	};
+in {
+	programs.niri.enable = true;
+
 	environment.systemPackages = with pkgs; [
-		gnupg
 		ripgrep
-		blender
-		tldr
 		pinentry-curses
-		pass
-		kitty
+		unzip
+		btop
+		bat
 		neovim
-		vscode
-		obsidian
-		obs-studio
-		mpv
-		openvpn
+		fish
+		zsh
+		nautilus
+		git
+		kitty
+		alacritty
+		firefox
+		tor-browser
+		dunst
+		swww
+		starship
+		rofi
+		waybar
+		inputs.noctalia.packages.${system}.default
+		inputs.quickshell.packages.${system}.default
+		inputs.caelestia-shell.packages.${system}.with-cli
+		zoxide
+		eza
+		fastfetch
+		tmux
+
+		xwayland-satellite
 
 		# gaming
-		lutris
-		wineWow64Packages.base
-		winetricks
 		steam
 		protonup
 
-		vesktop
-		nautilus
-		curl
-		zoxide
-		tree
-		nmap
-		spotify
-		mpd-mpris
-		spicetify-cli
-		waybar
-		swaynotificationcenter
-		libnotify
-		rofi-wayland
-		openssh
-		swww
-		eza
-		pamixer
-		flatpak
-		fish
-		starship
-		git
-		gh
-		lazygit
-		electron
-		xsel
-		libsForQt5.sddm
+		# theme
+		custom_sddm_astronaut
 		qt6.qtwayland
-		unzip
-		unrar-wrapper
+		(tela-circle-icon-theme.override { colorVariants = [ "dracula" ]; })
+		(catppuccin-kvantum.override {
+			accent = "flamingo";
+			variant = "macchiato";
+		})
+		papirus-folders
+		adwaita-icon-theme
+		adw-gtk3
 
 		# dev
-		mariadb
-		mariadb-connector-c
-		go
-
-		## python
-		python312
-		python3Packages.tkinter
-		python312Packages.pillow
-		python312Packages.pip
-		python312Packages.fastapi
-		python312Packages.uvicorn
-		ruff
-
-		corepack
-		ninja
-		gobject-introspection.dev
-		meson
-		cmake
-		pywal
-		pywalfox-native
 		gcc
+		cargo
+		python3
+		python3Packages.pip
 		home-manager
-		libsForQt5.qtstyleplugin-kvantum
-		libsForQt5.qt5ct
-		libsForQt5.qt5.qtquickcontrols2
-		libsForQt5.qt5.qtgraphicaleffects
-		brightnessctl
-		pipewire
-		pulseaudio
-		fastfetch
-		htop
-		btop
-		tty-clock
-		tmux
-		cava
-		bat
-		alsa-utils
-		killall
-		networkmanagerapplet
-		adwaita-qt
-		herbstluftwm
 
-		# hyprland
-		hyprland
-		hyprlock
-		hyprpicker
-		hypridle
-		xdg-desktop-portal-hyprland
 
-		nwg-look
-		glib
-		wlogout
-		swappy
-		seatd
-		xwayland
+		# utils
+		mpd
 		wl-clipboard
 		wf-recorder
-		#nodejs_20
-		firefox-devedition
-		chromium
-		libreoffice
-		playerctl
-		(tela-circle-icon-theme.override { colorVariants = [ "dracula" ]; })
-		#tela-circle-icon-theme
 		imagemagick
 		jq
-		parallel
-		catppuccin
-		catppuccin-kvantum
-		bibata-cursors
-		vanilla-dmz
 		grim
 		grimblast
 		slurp
-		udiskie
-		feh
+		swappy
 		fzf
-		service-wrapper
-		cargo
-		tlp
 		bluez
 		bluez-tools
 		blueman
 		pavucontrol
-		nix-prefetch-git
+		alsa-utils
+		pipewire
+		pulseaudio
+
+		# lib
+		libnotify
+		lxqt.lxqt-policykit
+		libsForQt5.qtstyleplugin-kvantum
+		libsForQt5.qt5ct
+		libsForQt5.qt5.qtquickcontrols2
+		libsForQt5.qt5.qtgraphicaleffects
 	];
 
 	fonts.packages = with pkgs; [
@@ -154,6 +101,7 @@
 		material-symbols
 		roboto
 		montserrat
-		(nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
-  ];
+		nerd-fonts.fira-code
+		nerd-fonts.jetbrains-mono
+	];
 }

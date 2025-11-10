@@ -1,24 +1,58 @@
-{ config, pkgs, lib, ... }: {
+{ config, pkgs, lib, inputs, ... }: {
 	imports = [
-		./fish.nix
+		./zsh.nix
 		./modules/bundles.nix
+		inputs.zen-browser.homeModules.default
 	];
 
-	home = {
-		username = "rap1";
-		homeDirectory = "/home/rap1";
-		stateVersion = "24.05";
+	nixpkgs.config.allowUnfree = true;
 
-		file = 
+	home = {
+		username = "ryfenri";
+		homeDirectory = "/home/ryfenri";
+		stateVersion = "25.05";
+
+		file =
 		let
 			symlink = config.lib.file.mkOutOfStoreSymlink;
 			home_dir = config.home.homeDirectory;
 		in {
-			".config/hypr/hyprlock.conf".source = symlink "${home_dir}/.github/dotfiles/.config/hypr/hyprlock.conf";
-			".config/hypr/scripts".source = symlink "${home_dir}/.github/dotfiles/.config/hypr/scripts";
-			".config/rofi".source = symlink "${home_dir}/.github/dotfiles/.config/rofi";
-			".config/nvim".source = symlink "${home_dir}/.github/dotfiles/.config/nvim";
+			".config/rmpc/notify".source = symlink "${home_dir}/.github/dotfiles/.config/rmpc/notify";
+			".config/rmpc/themes/".source = symlink "${home_dir}/.github/dotfiles/.config/rmpc/themes/";
+			".config/mpd".source = symlink "${home_dir}/.github/dotfiles/.config/mpd";
 		};
+
+		packages = with pkgs; [
+			cava
+			vesktop
+			rustdesk
+			spotify
+			pass
+			obsidian
+			obs-studio
+			mpv
+			swaybg
+			matugen
+			pywal
+			pywalfox-native
+			firefox
+
+			lefthook
+
+			qemu_full
+			virt-manager
+		];
 	};
 
+
+	programs.zen-browser.enable = true;
+
+	programs.bash = {
+		enable = true;
+		initExtra = ''
+		if [ -t 1 ] && [ "$(ps -p $PPID -o comm=)" != "zsh" ]; then
+		  exec ${pkgs.zsh}/bin/zsh
+		fi
+		'';
+	};
 }

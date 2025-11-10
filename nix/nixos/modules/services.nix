@@ -1,23 +1,25 @@
 { pkgs, ... }: {
   services = {
+	gnome.gnome-keyring.enable = true;
+
     xserver = {
-      enable = true;
+		enable = true;
 
-      xkb.layout = "us";
-      xkb.variant = "";
+		xkb.layout = "us";
+		xkb.variant = "";
 
-      videoDrivers = ["amdgpu"];
+		videoDrivers = [ "nvidia" ];
     };
+	
+	displayManager.sddm = {
+		enable = true;
+		
+		extraPackages = with pkgs; [
+			kdePackages.qtmultimedia
+		];
 
-    displayManager.sddm = {
-      enable = true;
-      theme = "${import ./sddm-themes/corners.nix { inherit pkgs; }}";
-	  settings = {
-		Users = {
-			FacesDir = "/var/lib/user-avatars/";
-		};
-	  };
-    };
+		theme = "sddm-astronaut-theme";
+	};
 
     blueman = {
       enable = true;
@@ -25,12 +27,15 @@
 
     openssh.enable = true;
     flatpak.enable = true;
+	mpd.enable = true; 
 
-	# mysql
-
+/*
 	mysql = {
 		enable = true;
 		package = pkgs.mariadb;
 	};
+  */
   };
+
+  security.polkit.enable = true;
 }

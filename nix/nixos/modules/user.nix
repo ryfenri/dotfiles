@@ -1,12 +1,16 @@
 { pkgs, ...}: {
-	programs.fish.enable = true;
-
 	users = {
-		defaultUserShell = pkgs.fish;
-
-		users.rap1 = {
+		users.ryfenri= {
 			isNormalUser = true;
-			extraGroups = ["networkmanager" "wheel" "input" ];
+			description = "ryfenri";
+			extraGroups = [
+				"networkmanager"
+				"wheel"
+				"input"
+				"libvirtd"
+				"kvm" 
+				"disk"
+			];
 			packages = with pkgs; [];
 		};
 	};

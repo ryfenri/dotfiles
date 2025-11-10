@@ -2,16 +2,18 @@
   imports = [
 	./env.nix
 	./user.nix
-	./hyprland.nix
+	#./hyprland.nix
 	./bluetooth.nix
-	./sddm-avatar.nix
+#	./sddm-avatar.nix
 	./services.nix
+	./portal.nix
 	./gpg.nix
-	./cachix.nix
+	./virtualisation.nix
+	./sound.nix
 
 	# gaming
 	./aagl.nix
+	./cachix.nix
 	./steam.nix
-	./gaming.nix
   ];
 }

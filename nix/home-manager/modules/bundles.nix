@@ -3,19 +3,19 @@
 		./git.nix
 		./gtk.nix
 		./qt.nix
-		./cava.nix
-		./sway/swaync/swaync.nix
-		./starship/minimalist2.nix
+		./rmpc.nix
+#		./cava.nix
+#		./sway/swaync/swaync.nix
+		./starship/minimalist.nix
 		./tmux.nix
 		./bat.nix
-		./cursor.nix
-		./spicetify.nix
-		./kitty.nix
-		./wm/waybar.nix
-		./wm/hypr
-		./pywal-discord
-		./rofi/rofi.nix
+#		./spicetify.nix
+#		./kitty.nix
+#		./wm/waybar.nix
+#		./wm/hypr
+#		./pywal-discord
+#		./rofi/rofi.nix
 		./fastfetch.nix
-		./wlogout
+#		./wlogout
 	];
 }

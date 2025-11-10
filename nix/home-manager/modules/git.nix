@@ -2,7 +2,9 @@
 	programs.git = {
 		enable = true;
 
-		userName = "srcrapi";
-		userEmail = "rafa1000.skylanders@gmail.com";
+		settings.user = {
+			name = "ryfenri";
+			email = "rafa1000.skylanders@gmail.com";
+		};
 	};
 }
