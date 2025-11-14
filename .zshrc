@@ -1,22 +1,17 @@
 export ZSH="$HOME/.oh-my-zsh"
+export PATH="/home/ryfenri/.config/herd-lite/bin:$PATH"
+export PHP_INI_SCAN_DIR="/home/ryfenri/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
 
 plugins=(
 	git
-	zsh-syntax-highlighting
 	zsh-autosuggestions
+	zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
-source $HOME/shell/aliases
+source $HOME/.zshenv
 
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(starship init zsh)"
-
-# pnpm
-export PNPM_HOME="/home/rap1/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
 
 fastfetch
