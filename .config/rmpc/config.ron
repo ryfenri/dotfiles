@@ -2,11 +2,11 @@
 #![enable(unwrap_newtypes)]
 #![enable(unwrap_variant_newtypes)]
 (
-    address: "~/.config/mpd/socket",
+    address: "127.0.0.1:6600",
     password: None,
-    theme: Some("ryarch"),
-    cache_dir: Some("~/.config/rmpc/.cache"),
-    on_song_change: ["~/.config/rmpc/notify"],
+    theme: None,
+    cache_dir: None,
+    on_song_change: None,
     volume_step: 5,
     max_fps: 30,
     scrolloff: 0,
@@ -21,7 +21,7 @@
     directories_sort: SortFormat(group_by_type: true, reverse: false),
     album_art: (
         method: Auto,
-        max_size_px: (width: 600, height: 600),
+        max_size_px: (width: 1200, height: 1200),
         disabled_protocols: ["http://", "https://"],
         vertical_align: Center,
         horizontal_align: Center,
@@ -35,10 +35,12 @@
             "<Tab>":   NextTab,
             "<S-Tab>": PreviousTab,
             "1":       SwitchToTab("Queue"),
-            "2":       SwitchToTab("Playlists"),
-            "3":       SwitchToTab("Search"),
-            "4":       SwitchToTab("Albums"),
-            "5":       SwitchToTab("Dir"),
+            "2":       SwitchToTab("Directories"),
+            "3":       SwitchToTab("Artists"),
+            "4":       SwitchToTab("Album Artists"),
+            "5":       SwitchToTab("Albums"),
+            "6":       SwitchToTab("Playlists"),
+            "7":       SwitchToTab("Search"),
             "q":       Quit,
             ">":       NextTrack,
             "p":       TogglePause,
@@ -123,8 +125,24 @@
             name: "Queue",
             pane: Split(
                 direction: Horizontal,
-                panes: [(size: "65%", pane: Pane(Queue)), (size: "35%", pane: Pane(AlbumArt))],
+                panes: [(size: "40%", pane: Pane(AlbumArt)), (size: "60%", pane: Pane(Queue))],
             ),
+        ),
+        (
+            name: "Directories",
+            pane: Pane(Directories),
+        ),
+        (
+            name: "Artists",
+            pane: Pane(Artists),
+        ),
+        (
+            name: "Album Artists",
+            pane: Pane(AlbumArtists),
+        ),
+        (
+            name: "Albums",
+            pane: Pane(Albums),
         ),
         (
             name: "Playlists",
@@ -134,22 +152,6 @@
             name: "Search",
             pane: Pane(Search),
         ),
-        (
-            name: "Albums",
-            pane: Pane(Albums),
-        ),
-		(
-			name: "Dir",
-			pane: Pane(Directories)
-		)
-		//(
-		//	name: "Artist",
-		//	pane: Pane(Artist)
-		//),
-		//(
-		//	name: "Album Artists",
-		//	pane: Pane(AlbumArtists)
-		//)
     ],
 )
 

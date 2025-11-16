@@ -1,15 +1,8 @@
-// Config //
 configuration {
-    modi:                        "drun,filebrowser,window,run";
+    modi:                        "drun";
     show-icons:                  true;
-    display-drun:                " ";
-    display-run:                 " ";
-    display-filebrowser:         " ";
-    display-window:              " ";
     drun-display-format:         "{name}";
-    window-format:               "{w}{t}";
-    font:                        "JetBrainsMono Nerd Font 10";
-    icon-theme:                  "Tela-circle-dracula";
+    font:                        "JetBrainsMono Nerd Font 8";
 }
 
 @theme "~/.config/rofi/colors-rofi.rasi"
@@ -17,90 +10,39 @@ configuration {
 
 // Main //
 window {
-    height:                      33em;
-    width:                       63em;
-    transparency:                "real";
-    fullscreen:                  false;
     enabled:                     true;
+    fullscreen:                  false;
+    width:                       82%;
+    transparency:                "real";
     cursor:                      "default";
-    spacing:                     0em;
-    padding:                     0em;
-    border-color:                @main-br;
-    background-color:            @main-bg;
-	border-radius:               1.5em;
+	border-radius:				 2em;
+    spacing:                     0px;
+    padding:                     0px;
+    border:                      0px;
+    border-radius:               0px;
+    border-color:                transparent;
+    background-color:            transparent;
 }
 mainbox {
     enabled:                     true;
-    spacing:                     0em;
-    padding:                     0em;
-    orientation:                 horizontal;
-    children:                    [ "dummywall" , "listbox" ];
-    background-color:            transparent;
-}
-dummywall {
-    spacing:                     0em;
-    padding:                     0em;
-    width:                       37em;
-    expand:                      false;
-    orientation:                 horizontal;
-    children:                    [ "mode-switcher" , "inputbar" ];
-    background-color:            transparent;
-    background-image:            url("~/.config/swww/wall.blur", height);
-}
-
-
-// Modes //
-mode-switcher{
-    orientation:                 vertical;
-    enabled:                     true;
-    width:                       3.8em;
-    padding:                     9.2em 0.5em 9.2em 0.5em;
-    spacing:                     1.2em;
-    background-color:            transparent;
-    background-image:            url("~/.config/swww/wall.blur", height);
-}
-button {
-    cursor:                      pointer;
-    border-radius:               2em;
+    children:                    [ "listview" ];
+	border-radius:				 1.5em;
     background-color:            @main-bg;
-    text-color:                  @main-fg;
-}
-button selected {
-    background-color:            @main-fg;
-    text-color:                  @main-bg;
-}
-
-
-// Inputs //
-inputbar {
-    enabled:                     true;
-    children:                    [ "entry" ];
-    background-color:            transparent;
-}
-entry {
-    enabled:                     false;
 }
 
 
 // Lists //
-listbox {
-    spacing:                     0em;
-    padding:                     2em;
-    children:                    [ "dummy" , "listview" , "dummy" ];
-    background-color:            transparent;
-}
 listview {
     enabled:                     true;
-    spacing:                     0em;
-    padding:                     0em;
     columns:                     1;
-    lines:                       8;
+    lines:                       10;
+    spacing:                     30px;
+    padding:                     40px 100px 40px 100px;
     cycle:                       true;
-    dynamic:                     true;
+    dynamic:                     false;
     scrollbar:                   false;
-    layout:                      vertical;
+    layout:                      horizontal;
     reverse:                     false;
-    expand:                      false;
     fixed-height:                true;
     fixed-columns:               true;
     cursor:                      "default";
@@ -108,34 +50,37 @@ listview {
     text-color:                  @main-fg;
 }
 
-dummy {
-    background-color:            transparent;
-}
-
 
 // Elements //
 element {
     enabled:                     true;
-    spacing:                     0.8em;
-    padding:                     0.4em 0.4em 0.4em 1.5em;
+    orientation:                 vertical;
+    spacing:                     0px;
+    padding:                     5px;
+    border-radius:               0px;
     cursor:                      pointer;
     background-color:            transparent;
     text-color:                  @main-fg;
-    border-radius:               1.5em;
 }
 element selected.normal {
     background-color:            @select-bg;
     text-color:                  @select-fg;
+	border-radius:				 1em;
 }
 element-icon {
-    size:                        2.8em;
+    size:                        30%;
+    spacing:                     0px;
+    padding:                     0px;
     cursor:                      inherit;
+    border-radius:               35px;
     background-color:            transparent;
     text-color:                  inherit;
 }
 element-text {
     vertical-align:              0.5;
-    horizontal-align:            0.0;
+    horizontal-align:            0.5;
+    spacing:                     0px;
+    padding:                     10px;
     cursor:                      inherit;
     background-color:            transparent;
     text-color:                  inherit;

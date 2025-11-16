@@ -1,0 +1,18 @@
+[config]
+
+# User-defined templates
+# Add your custom templates below
+# Example:
+# [templates.myapp]
+# input_path = "~/.config/noctalia/templates/myapp.css"
+# output_path = "~/.config/myapp/theme.css"
+# post_hook = "myapp --reload-theme"
+
+#[templates.niri]
+#input_path = "~/.config/noctalia/templates/niri.kdl"
+#output_path = "~/.config/niri/config.kdl"
+
+[templates.rofi]
+input_path = "~/.config/noctalia/templates/colors-rofi.rasi"
+output_path = "~/.config/rofi/colors-rofi.rasi"
+

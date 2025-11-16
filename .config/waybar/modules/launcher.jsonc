@@ -1,5 +1,0 @@
-	"custom/launcher": {
-		"format": "",
-		"tooltip": false,
-		"on-click": "pkill -x rofi || rofi -show drun"
-	},
