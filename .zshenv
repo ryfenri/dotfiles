@@ -1,10 +1,8 @@
 export EDITOR="nvim"
 export BROWSER="zen-browser"
 export MUSICPLAYER="com.mastermindzh.tidal-hifi"
-export TERMINAL="wezterm"
-#export BROTHER_PC=$(pass ip/rovier)
-#export MY_IP=$(pass ip/rap1)
-
+export TERMINAL="kitty"
+export ARCH_CONFIG_DIR="${HOME}/.config/rybelika"
 
 # Alias
 
@@ -20,13 +18,12 @@ alias noctalia-shell='qs -c noctalia-shell'
 
 # kitty
 alias icat="kitten icat"
+alias cp="cp -v"
+alias mv="mv -v"
 
 # apps
 alias v='nvim'
 alias cat='bat'
-alias ff='fastfetch'
-alias fzf='fzf --preview="bat --color=always {}" --border=rounded'
-alias vfzf='nvim $(fzf --preview="bat --color=always {}" --border=rounded)'
 
 # obsidian
 alias on="python3 ~/.local/bin/obsidian.py -n"
