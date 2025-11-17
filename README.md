@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Repo Size](https://img.shields.io/github/repo-size/ryfenri/dotfiles/tree/niri?style=for-the-badge&logo=aiqfome&label=size&labelColor=323439&color=2960ec)
+![Repo Size](https://img.shields.io/github/repo-size/ryfenri/dotfiles?style=for-the-badge&logo=aiqfome&label=size&labelColor=323439&color=2960ec)
 
 </div>
 
