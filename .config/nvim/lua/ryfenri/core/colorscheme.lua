@@ -1,6 +1,6 @@
 -- ! source code in ~/.config/hypr/scripts/color_generation/templates/nvim !
 
-local colorscheme = "sakura"
+local colorscheme = "catppuccin-mocha";
 
 local is_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 
