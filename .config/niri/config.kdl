@@ -7,6 +7,8 @@ input {
 			options "caps:escape"
         }
 
+		repeat-delay 250
+
         numlock
     }
 
@@ -309,6 +311,14 @@ window-rule {
 }
 
 window-rule {
+	match app-id="firefox$"
+	match app-id="qutebrowser$"
+	match app-id="zen$"
+
+	open-maximized true
+}
+
+window-rule {
     geometry-corner-radius 12
 	clip-to-geometry true
 }
@@ -324,7 +334,7 @@ binds {
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume increase"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume decrease"; }
     XF86AudioMute        allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume muteOutput"; }
-    XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+    XF86AudioMicMute     allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume muteOutput"; }
 
     XF86MonBrightnessUp allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call brightness increase"; }
     XF86MonBrightnessDown allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call brightness decrease"; }
@@ -531,7 +541,7 @@ binds {
     Mod+T hotkey-overlay-title="Open Browser: Zen Browser" { spawn "zen-browser"; }
 	Mod+Return hotkey-overlay-title="Open Terminal: Kitty" { spawn "kitty"; }
 	Mod+V hotkey-overlay-title="Vesktop" { spawn "vesktop"; }
-    Mod+D hotkey-overlay-title="Run an Application: rofi" { spawn-sh "rofi -show drun"; }
+    Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn-sh "fuzzel"; }
 
 	Mod+Shift+K hotkey-overlay-title="Switch keyboard layout" { spawn-sh "niri msg action switch-layout next"; }
 	Mod+Backspace hotkey-overlay-title="Open session menu" { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
