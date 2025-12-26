@@ -25,10 +25,10 @@ keymap.set("v", ">", ">gv", opts)
 
 -- Telescope
 keymap.set("n", "<leader>ff", ":Telescope find_files <CR>", opts)
+keymap.set("n", "<leader>fg", ":Telescope live_grep <CR>", opts)
 keymap.set("n", "<leader>fh", ":Telescope help_tags <CR>", opts)
 keymap.set("n", "<leader>fb", ":Telescope buffers <CR>", opts)
 keymap.set("n", "<leader>fc", ":Telescope colorscheme <CR>", opts)
-keymap.set("n", "<leader>fb", ":Telescope buffers <CR>", opts)
 keymap.set("n", "<leader>gb", ":Telescope git_branches <CR>", opts)
 
 -- NvimTree
@@ -48,6 +48,8 @@ keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
 keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
 keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
+keymap.set("n", "<leader>ld", vim.diagnostic.open_float, opts)
+keymap.set("n", "<leader>lq", vim.diagnostic.setloclist, opts)
 keymap.set("n", "<leader>k", vim.lsp.buf.hover, opts)
 keymap.set("n", "<leader>li", vim.lsp.buf.implementation, opts)
 keymap.set("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts)
@@ -60,3 +62,9 @@ keymap.set("n", "<leader>f", ":Format <CR>", opts)
 
 -- Markdown
 keymap.set("n", "<leader>mr", ":RenderMarkdown toggle <CR>", opts)
+
+-- Debugger
+keymap.set("n", "<leader>db", ":DapToggleBreakpoint <CR>")
+keymap.set("n", "<leader>dpr", function ()
+	require("dap-python").test_method()
+end)
