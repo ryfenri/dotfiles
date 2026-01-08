@@ -22,6 +22,8 @@ keymap.set("n", "<ESC>", ":nohlsearch <CR>", opts)
 
 keymap.set("v", "<", "<gv", opts)
 keymap.set("v", ">", ">gv", opts)
+keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
+keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 
 -- Telescope
 keymap.set("n", "<leader>ff", ":Telescope find_files <CR>", opts)
