@@ -1,6 +1,5 @@
 export EDITOR="nvim"
-export BROWSER="zen-browser-optimized"
+export BROWSER="zen-browser"
 export MUSICPLAYER="spotify"
 export TERMINAL="kitty"
-export BROTHER_PC=$(pass ip/rovier)
-export MY_IP=$(pass ip/rap1)
+export ARCH_CONFIG_DIR="${HOME}/.config/rybelika"
