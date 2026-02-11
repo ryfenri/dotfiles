@@ -33,23 +33,32 @@ return {
 						icon = " ",
 						icon_hl = "Title",
 						desc = "find file                ",
-						desc_hl = "String",
 						key = "f",
 						key_hl = "Number",
 						key_format = " %s", -- remove default surrounding `[]`
 						action = ":Telescope find_files",
 					},
 					{
+						icon = " ",
+						desc = "open explorer",
+						key = "e",
+						key_hl = "Number",
+						key_format = " %s",
+						action = ":NvimTreeOpen"
+					},
+					{
 						icon = " ",
 						desc = "select colorscheme",
 						key = "c",
+						key_hl = "Number",
 						key_format = " %s", -- remove default surrounding `[]`
-						action = ":telescope colorscheme",
+						action = ":Telescope colorscheme",
 					},
 					{
 						icon = "󰈆 ",
 						desc = "quit",
 						key = "q",
+						key_hl = "Number",
 						key_format = " %s", -- remove default surrounding `[]`
 						action = ":qa",
 					},

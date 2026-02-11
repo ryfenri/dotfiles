@@ -4,19 +4,31 @@ return {
 		opts = {
 			ensure_installed = {
 				"rust-analyzer",
-				"ruff",
 				"prettier",
 				"prettierd",
 				"pylsp",
+				"pyright",
+				"debugpy",
+				"ruff",
 				"codelldb",
-				"goimports",
-				"gopls"
 			},
 		},
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
+			vim.diagnostic.config({
+				virtual_text = true,
+				signs = true,
+				underline = true,
+				update_in_insert = false,
+				severity_sort = true,
+				float = {
+					border = 'rounded',
+					source = 'always',
+				},
+			})
+
 			local lsps = {
 				lua_ls = {
 					settings = {
@@ -76,19 +88,19 @@ return {
 				{ "╰", "FloatBorder" },
 				{ "│", "FloatBorder" },
 			}
-
 			local handlers = {
 				["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
 				["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
 			}
 
 			require("mason").setup()
-			require("mason-lspconfig").setup()
-			require("mason-lspconfig").setup_handlers({
-				function(server_name)
-					local server = lsps[server_name] or {}
-					require("lspconfig")[server_name].setup({ server = server, handlers = handlers })
-				end,
+			require("mason-lspconfig").setup({
+				handlers = {
+					function(server_name)
+						local server = lsps[server_name] or {}
+						vim.lsp.config(server_name).setup({ server = server, handlers = handlers })
+					end,
+				}
 			})
 		end,
 	},

@@ -23,10 +23,13 @@ case "$1" in
 esac
 
 read -p "Query: " query
-query=$(echo "$query" | tr ' ' '+')
+query=$(echo "$query" | tr ' ' '%20')
 
-wallpaper_url=$(curl -s "https://wallhaven.cc/api/v1/search?q=${query}&sorting=random&categories=010&purity=${SFW}${SKETCHY}${NSFW}&resolutions=1920x1080&apikey=qtLIxlOdpS5mn95Lma3uh5dOGc2ReYVq" \
-	| jq -r '.data[0].path')
+seed=$(cat "$HOME/random_wallpaper_info.json" | jq -r '.seed')
+
+wallpaper_url=$(curl -s "https://wallhaven.cc/api/v1/search?q=${query}&sorting=random&categories=010&purity=${SFW}${SKETCHY}${NSFW}&resolutions=1920x1080&seed=${seed}&apikey=${WALLHAVEN_API_KEY}" \
+	| jq -r '{path: .data[0].path, seed: .meta.seed}' > "$HOME/random_wallpaper_info.json" \
+	&& cat "$HOME/random_wallpaper_info.json" | jq -r '.path')
 
 wallpaper_name=$(basename "$wallpaper_url")
 

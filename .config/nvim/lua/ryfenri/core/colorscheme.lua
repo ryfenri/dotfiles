@@ -1,6 +1,6 @@
 -- ! source code in ~/.config/hypr/scripts/color_generation/templates/nvim !
 
-local colorscheme = "sakura"
+local colorscheme = "catppuccin-mocha";
 
 local is_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 
@@ -11,7 +11,7 @@ end
 
 local function setLineNumberColors()
 	vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#444550" })
-	vim.api.nvim_set_hl(0, "LineNr", { fg = "#c0c1ff", bold = true })
+	vim.api.nvim_set_hl(0, "LineNr", { fg = "#e5c36c", bold = true })
 	vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#444550" })
 end
 

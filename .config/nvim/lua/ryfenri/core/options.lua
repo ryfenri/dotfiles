@@ -12,10 +12,10 @@ opt.shiftwidth = 4
 opt.termguicolors = true
 opt.number = true
 opt.relativenumber = true
+opt.linespace = 4
 opt.colorcolumn = "100"
 opt.splitright = true
 opt.splitbelow = true
-opt.guicursor = "n-v-i-c:block-Cursor"
 -- opt.list = true
 -- opt.listchars = { tab = "│ " }
 opt.conceallevel = 1

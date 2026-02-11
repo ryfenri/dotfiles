@@ -9,16 +9,20 @@
 ## Components
 
 - **WM:** [hyprland](https://hyprland.org/)
-- **OS:** [endeavour](https://endeavouros.com/)
+- **OS:** [arch linux](https://endeavouros.com/)
 - **Terminal:** [kitty](https://sw.kovidgoyal.net/kitty/)
 - **Shell:** [zsh](https://wiki.archlinux.org/title/Zsh)
-- **File Manager:** [nautilus](https://github.com/GNOME/nautilus)
+- **File Manager:** [dolphin](https://github.com/GNOME/nautilus)
 - **Application Launcher:** [rofi](https://github.com/davatorium/rofi)
 - **Bar:** [waybar](https://github.com/Alexays/Waybar)
+- **Desktop Shell**: [noctalia-shell](https://github.com/noctalia-dev/noctalia-shell)
 - **Compositor:** [hyprland](https://github.com/hyprwm/Hyprland)
-- **Notification:** [swaync](https://github.com/ErikReider/SwayNotificationCenter)
+- **Notifmcation:** [dunst](https://github.com/ErikReider/SwayNotificationCenter)
+
+> [!INFO]
+> I only use the noctalia shell when i'm not using waybar vice versa
+> for now it doesn't exist very unique things on my dots
 
 ## Preview
 
-![Preview1](./assets/240918_23h01m37s_screenshot.png)
-![Preview1](./assets/240918_23h08m20s_screenshot.png)
+![Preview1](./assets/260209_18h54m29s_screenshot.png)
