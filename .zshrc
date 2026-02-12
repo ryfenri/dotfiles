@@ -23,6 +23,32 @@ esac
 setopt EXTENDED_GLOB
 unsetopt hist_verify
 
+function push_obsidian() {
+	current_date=$(date '+%d/%m/%Y %I:%M:%S')
+
+	cd ~/personal || return 1
+
+	git add . && \
+	git commit -m "vault: $current_date" && \
+	git push 
+
+	cd -
+}
+
+function pull_obsidian() {
+	cd ~/personal || return 1
+	git pull
+	cd -
+}
+
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
+
 # global
 alias -g C='| wl-copy'
 
@@ -48,24 +74,6 @@ alias noctalia-shell='qs -c noctalia-shell'
 alias on="python3 ~/.local/bin/obsidian.py -n"
 alias os="python3 ~/.local/bin/obsidian.py -s"
 alias op="python3 ~/.local/bin/obsidian.py -p"
-
-push_obsidian() {
-	current_date=$(date '+%d/%m/%Y %I:%M:%S')
-
-	cd ~/personal || return 1
-
-	git add . && \
-	git commit -m "vault: $current_date" && \
-	git push 
-
-	cd -
-}
-
-pull_obsidian() {
-	cd ~/personal || return 1
-	git pull
-	cd -
-}
 
 alias obps=push_obsidian
 alias obpl=pull_obsidian
