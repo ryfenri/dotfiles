@@ -23,8 +23,16 @@ esac
 setopt EXTENDED_GLOB
 unsetopt hist_verify
 
+function onep() {
+	local message="$1"
+
+	git add -A && \
+	git commit -m "$message" && \
+	git push || echo -e "\nFailed to push changes"
+}
+
 function push_obsidian() {
-	current_date=$(date '+%d/%m/%Y %I:%M:%S')
+	local current_date=$(date '+%d/%m/%Y %I:%M:%S')
 
 	cd ~/personal || return 1
 
