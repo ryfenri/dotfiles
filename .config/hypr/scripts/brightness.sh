@@ -3,24 +3,21 @@
 icons_dir="${HOME}/.config/hypr/scripts/icons/volume"
 
 
-
 notify_brightness() {
-  percentage=$(awk -v brightness="${brightness}" 'BEGIN { printf "%d", (brightness / 256) * 100 + 0.5 }')
-  icon="${icons_dir}/vol-${percentage}.svg" 
+	percentage="$(brightnessctl i | grep -oE '[0-9]+%' | tr -d %)"
+	icon="${icons_dir}/vol-${percentage}.svg" 
 
-  notify-send -i "${icon}" "${percentage}"
+	notify-send -t 2000 -i "${icon}" "${percentage}"
 }
 
 
 case "$1" in
   -i)
     brightnessctl set +5%
-    brightness=$(brightnessctl get)
-    notify_brightness
+	notify_brightness
     ;;
   -d)
     brightnessctl set 5%-
-    brightness=$(brightnessctl get)
     notify_brightness
     ;;
   *)
