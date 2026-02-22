@@ -87,3 +87,8 @@ alias obps=push_obsidian
 alias obpl=pull_obsidian
 
 fastfetch
+
+export PATH=$PATH:/home/ryfenri/.spicetify
+
+# opencode
+export PATH=/home/ryfenri/.opencode/bin:$PATH
