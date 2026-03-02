@@ -1,8 +1,8 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
-updates=$(checkupdates | wc -l)
+updates="$(yay -Qu | wc -l)"
 
-if [ ${updates} -ne 0 ]; then
+if [ ${updates} != 0 ]; then
   echo "{\"text\": \"${updates}\", \"tooltip\": \"Update: ${updates}\"}"
 else 
   echo "{\"text\": \"${updates}\", \"tooltip\": \"No updates available\"}"

@@ -10,6 +10,8 @@ ryarch="${config_dir}/ryarch/ryarch.json"
 styles_dir="$waybar_dir/styles"
 themes_dir="$config_dir/hypr/themes"
 local_bin="${HOME}/.local/bin"
+rofi_dir="${HOME}/.config/rofi"
+rofi_theme="style-1"
 
 help_menu() {
 	echo "$0" commands:
@@ -105,7 +107,7 @@ case "$1" in
         clear_cache
         ;;
 	-d | --drun)
-		rofi -show drun
+		rofi -show drun -theme "${rofi_dir}/${rofi_theme}.rasi"
 		;;
 	-w | --window)
 		rofi -show window
