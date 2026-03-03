@@ -17,9 +17,9 @@
 
 	// source based on config.ctl //
 
-	"modules-left": ["custom/padd","custom/launcher","custom/padd","tray"],
-	"modules-center": ["custom/updates","hyprland/workspaces","battery"],
-	"modules-right": ["clock","custom/sep","hyprland/language","backlight","custom/sep","network","pulseaudio","custom/notification","custom/padd","custom/padd"],
+	"modules-left": ["custom/padd","custom/launcher"],
+	"modules-center": ["custom/updates", "custom/sep", "clock", "custom/sep", "battery"],
+	"modules-right": ["custom/sep", "tray", "hyprland/language","backlight","custom/sep","network","pulseaudio","custom/notification","custom/padd","custom/padd"],
 
 
 	// source in the modules folder  //
@@ -27,7 +27,7 @@
 	"custom/launcher": {
 		"format": "",
 		"tooltip": false,
-		"on-click": "pkill -x rofi || rofi -show drun"
+		"on-click": "pkill -x rofi || rofi -show drun -theme ~/.config/rofi/style-1.rasi"
 	},
 	"tray": {
 		"icon-size": 18,
@@ -39,7 +39,7 @@
 		"return-type": "json",
 		"exec": "~/.config/hypr/scripts/updates.sh",
 		"interval": 86400,
-		"on-click": "kitty bash -c 'yay -Syu'",
+		"on-click": "kitty --title 'Updates' bash -c 'yay -Syu'",
 		"tooltip": true
 	},
 	"hyprland/workspaces": {
@@ -61,8 +61,8 @@
 			"critical": 15
 		},
 
-		"format": "{icon} ",
-		"format-alt": "{icon} <span foreground='white'>{capacity}%</span>",
+		"format": "{icon} <span foreground='white'>{capacity}%</span>",
+		"format-alt": "{icon} ",
 		"format-charging": " <span foreground='white'>{capacity}%</span>",
 		"format-plugged":" <span> foreground='white'{capacity}%</span>",
 		// "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
