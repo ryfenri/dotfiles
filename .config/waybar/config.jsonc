@@ -17,7 +17,7 @@
 
 	// source based on config.ctl //
 
-	"modules-left": ["custom/padd","custom/launcher"],
+	"modules-left": ["custom/padd","custom/launcher","custom/padd"],
 	"modules-center": ["custom/updates", "custom/sep", "clock", "custom/sep", "battery"],
 	"modules-right": ["custom/sep", "tray", "hyprland/language","backlight","custom/sep","network","pulseaudio","custom/notification","custom/padd","custom/padd"],
 

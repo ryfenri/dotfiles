@@ -9,6 +9,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+export FZF_DEFAULT_OPTS='--color=fg:7,bg:0,fg+:7,bg+:8,hl:3,pointer:7,marker:8'
 
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(starship init zsh)"
@@ -87,8 +88,3 @@ alias obps=push_obsidian
 alias obpl=pull_obsidian
 
 fastfetch
-
-export PATH=$PATH:/home/ryfenri/.spicetify
-
-# opencode
-export PATH=/home/ryfenri/.opencode/bin:$PATH
