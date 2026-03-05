@@ -6,6 +6,7 @@ SKETCHY=0
 PREVIEW=false
 DOWNLOAD_PREVIEW=false
 TAGS=""
+QUERY=""
 
 wallpapers_folder="$HOME/Pictures/temp_wallpapers"
 
@@ -37,6 +38,11 @@ function rename_wallpaper() {
 
 while [ "$#" -gt 0 ]; do
 	case "$1" in
+		--query=*)
+			QUERY="${1#--query=}"
+			QUERY=$(echo "$QUERY" | tr ' ' '%20')
+			shift
+			;;
 		--tags=*)
 			TAGS="${1#--tags=}"
 			shift
@@ -75,8 +81,10 @@ if [ "$DOWNLOAD_PREVIEW" = true ]; then
 	exit
 fi
 
-read -p "Query: " query
-query=$(echo "$query" | tr ' ' '%20')
+if [ -z "$QUERY" ]; then
+	read -p "Query: " QUERY
+	QUERY=$(echo "$QUERY" | tr ' ' '%20')
+fi
 
 if [ ! -f random_wallpaper_info.json ]; then
 	echo '{}' > random_wallpaper_info.json
@@ -84,7 +92,7 @@ fi
 
 seed=$(cat "$HOME/random_wallpaper_info.json" | jq -r '.seed')
 
-wallpaper_url=$(curl -s "https://wallhaven.cc/api/v1/search?q=${query}%20${TAGS}&sorting=random&categories=010&purity=${SFW}${SKETCHY}${NSFW}&atleast=1920x1080&ratios=16x9&seed=${seed}&apikey=${WALLHAVEN_API_KEY}" \
+wallpaper_url=$(curl -s "https://wallhaven.cc/api/v1/search?q=${QUERY}%20${TAGS}&sorting=random&categories=010&purity=${SFW}${SKETCHY}${NSFW}&atleast=1920x1080&ratios=16x9&seed=${seed}&apikey=${WALLHAVEN_API_KEY}" \
 	| jq -r '{path: .data[0].path, seed: .meta.seed}' > "$HOME/random_wallpaper_info.json" \
 	&& cat "$HOME/random_wallpaper_info.json" | jq -r '.path')
 
