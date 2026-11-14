@@ -1,34 +1,43 @@
 return {
-	"nvim-treesitter/nvim-treesitter",
-	config = function()
-		require("nvim-treesitter.configs").setup({
-			ensure_installed = {
-				"c",
-				"cpp",
-				"rust",
-				"go",
-				"lua",
-				"vim",
-				"vimdoc",
-				"markdown",
-				"markdown_inline",
-				"python",
-				"typescript",
-				"javascript",
-				"astro",
-			},
+    {
+        "nvim-treesitter/nvim-treesitter",
+        branch = "main",
+        lazy = false,
+        build = ":TSUpdate",
 
-			sync_install = false,
-			auto_install = true,
+        config = function()
+            require("nvim-treesitter").setup({})
 
-			highlight = {
-				enable = true,
-				additional_vim_regex_highlighting = false,
-			},
+            local languages = {
+                "c",
+                "cpp",
+                "rust",
+                "go",
+                "lua",
+                "vim",
+                "vimdoc",
+                "markdown",
+                "markdown_inline",
+                "python",
+                "typescript",
+                "javascript",
+                "astro",
+            }
 
-			autotag = {
-				enable = true,
-			},
-		})
-	end,
+            require("nvim-treesitter").install(languages)
+
+            vim.api.nvim_create_autocmd("FileType", {
+                pattern = languages,
+                callback = function()
+                    vim.treesitter.start()
+                end,
+            })
+        end,
+    },
+
+    {
+        "windwp/nvim-ts-autotag",
+        event = "InsertEnter",
+        opts = {},
+    },
 }
