@@ -1,0 +1,43 @@
+[annotate]
+advanced_size = "0"
+backdrop = "{\"corner_radius\":12,\"enabled\":false,\"gradient\":true,\"gradient_angle\":135.0,\"gradient_end\":\"tertiary\",\"gradient_start\":\"primary\",\"padding\":64,\"shadow\":true,\"shadow_blur\":40,\"shadow_color\":\"shadow\",\"shadow_offset_x\":16,\"shadow_offset_y\":16,\"shadow_opacity\":0.5}"
+color_arrow = "1,1,1,1"
+color_blur = "0.96,0.2,0.28,1"
+color_brush = "0.96,0.2,0.28,1"
+color_circle = "0.96,0.2,0.28,1"
+color_crop = "0.96,0.2,0.28,1"
+color_eraser = "0.96,0.2,0.28,1"
+color_highlighter = "1,0.91,0.2,1"
+color_line = "0.96,0.2,0.28,1"
+color_move = "0.96,0.2,0.28,1"
+color_numbering = "0.96,0.2,0.28,1"
+color_rectangle = "0.96,0.2,0.28,1"
+color_text = "0.96,0.2,0.28,1"
+fill = "off"
+tool = "arrow"
+toolbar_positions = "{\"eDP-1\":{\"x\":466.5859375,\"y\":13.42578125}}"
+width_arrow = "6"
+width_blur = "32"
+width_brush = "6"
+width_circle = "6"
+width_crop = "6"
+width_eraser = "28"
+width_highlighter = "24"
+width_line = "6"
+width_move = "6"
+width_numbering = "32"
+width_rectangle = "6"
+width_text = "24"
+
+[security_migrations]
+calendar_credentials_v1 = true
+
+[template_store]
+sort = "category_asc"
+
+[theme_templates]
+applied_builtin_ids = "gtk3 gtk4 hyprland kitty qt"
+applied_community_ids = "antigravity neovim obsidian vscode yazi zen-browser"
+
+[wallpaper_panel]
+flatten = false

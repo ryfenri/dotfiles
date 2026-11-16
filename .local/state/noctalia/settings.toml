@@ -1,0 +1,439 @@
+config_version = 16
+
+[bar]
+order = [ "bottom", "main", "top", "right" ]
+
+    [bar.bottom]
+    center = []
+    enabled = true
+    end = []
+    margin_ends = 0
+    position = "bottom"
+    start = []
+    thickness = 16
+
+    [bar.main]
+    center = [ "clock", "date", "widget" ]
+    end = [ "recorder", "media", "power_profile", "network", "volume", "brightness", "battery" ]
+    margin_ends = 0
+    position = "left"
+    start = [ "spacer_2", "workspaces", "tray", "keyboard_layout" ]
+    thickness = 42
+
+    [bar.right]
+    center = []
+    enabled = true
+    end = []
+    margin_ends = 0
+    position = "right"
+    start = []
+    thickness = 16
+
+        [bar.right.dead_zone.actions]
+        left = "panel-toggle control-center audio"
+        right = "none"
+
+    [bar.top]
+    center = []
+    enabled = true
+    end = []
+    margin_ends = 0
+    start = []
+    thickness = 16
+
+        [bar.top.dead_zone.actions]
+        middle = "panel-toggle control-center system"
+        right = "none"
+
+[control_center]
+hidden_tabs = [ "screen-time" ]
+show_avatar_border = false
+show_session_button = false
+sidebar_section = "none"
+
+    [[control_center.shortcuts]]
+    type = "wifi"
+
+    [[control_center.shortcuts]]
+    type = "bluetooth"
+
+    [[control_center.shortcuts]]
+    type = "caffeine"
+
+    [[control_center.shortcuts]]
+    type = "nightlight"
+
+    [[control_center.shortcuts]]
+    type = "noctalia/screen_recorder:toggle"
+
+    [[control_center.shortcuts]]
+    type = "power_profile"
+
+[desktop_widgets]
+schema_version = 2
+widget_order = [ "desktop-widget-0000000000000001" ]
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget.desktop-widget-0000000000000001]
+    box_height = 128.0
+    box_width = 352.0
+    cx = 256.0
+    cy = 940.0
+    output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "audio_visualizer"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000001.settings]
+        background = false
+        bands = 32
+        centered = true
+        color_1 = "on_primary"
+        color_2 = "primary"
+        mirrored = true
+        reversed = false
+        show_when_idle = false
+
+[dock]
+enabled = false
+
+[hooks]
+battery_charging = "noctalia msg power-set balanced"
+battery_discharging = "noctalia msg power-set power-saver"
+session_locked = "noctalia msg media pause"
+shutting_down = "toggle_server"
+started = "noctalia msg plugin yuuto/arch-updater:service all check"
+wallpaper_changed = "~/.config/noctalia/apply_pixie_sddm_wallpaper.sh"
+
+[hot_corners]
+enabled = true
+
+    [hot_corners.bottom_left]
+    action = "command"
+    command = "noctalia msg panel-open control-center"
+
+    [hot_corners.bottom_right]
+    action = "command"
+    command = "antigravity"
+
+    [hot_corners.top_right]
+    action = "command"
+    command = "seanime-denshi"
+
+[location]
+auto_locate = true
+
+[lockscreen]
+transition = [ "vortex" ]
+transition_duration = 1400
+
+[lockscreen_widgets]
+enabled = true
+schema_version = 2
+widget_order = [
+    "lockscreen-widget-0000000000000007",
+    "lockscreen-widget-0000000000000003",
+    "lockscreen-login-box@eDP-1",
+    "lockscreen-widget-0000000000000002",
+    "lockscreen-widget-0000000000000008",
+    "lockscreen-widget-000000000000000a",
+    "lockscreen-widget-000000000000000b"
+]
+
+    [lockscreen_widgets.grid]
+    cell_size = 8
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 70.0
+    box_width = 416.0
+    cx = 944.0
+    cy = 713.0
+    output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_container"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 0.97999999999999998
+        input_radius = 16.0
+        layout = "compact"
+        show_caps_lock = true
+        show_keyboard_layout = false
+        show_login_button = false
+        show_media = false
+        show_password_reveal = true
+        show_session_buttons = false
+        show_unlock_hint = false
+        show_weather = false
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000002]
+    box_height = 80.0
+    box_width = 208.0
+    cx = 944.0
+    cy = 812.0
+    output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "weather"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000002.settings]
+        background = true
+        background_opacity = 0.80000000000000004
+        background_padding = 10
+        background_radius = 12
+        shadow = true
+        show_forecast = false
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000003]
+    box_height = 272.0
+    box_width = 416.0
+    cx = 944.0
+    cy = 521.5
+    output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "label"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000003.settings]
+        title = ""
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000007]
+    box_height = 496.0
+    box_width = 1360.0
+    cx = 1735.102783203125
+    cy = 1022.7742919921875
+    output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = -0.52359879016876221
+    type = "label"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000007.settings]
+        background_opacity = 0.25
+        opacity = 1.0
+        title = ""
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000008]
+    box_height = 496.0
+    box_width = 1360.0
+    cx = 272.0
+    cy = 14.7742919921875
+    output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = -0.52359879016876221
+    type = "label"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000008.settings]
+        background_opacity = 0.25
+        opacity = 1.0
+        title = ""
+
+    [lockscreen_widgets.widget.lockscreen-widget-000000000000000a]
+    box_height = 160.0
+    box_width = 320.0
+    cx = 944.0
+    cy = 492.0
+    output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-000000000000000a.settings]
+        background = false
+        center_text = true
+        format = "{:%H:%M}"
+        timezone = ""
+
+    [lockscreen_widgets.widget.lockscreen-widget-000000000000000b]
+    box_height = 32.0
+    box_width = 128.0
+    cx = 944.0
+    cy = 569.548583984375
+    output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-000000000000000b.settings]
+        background = false
+        center_text = true
+        font_family = "JetBrainsMono Nerd Font"
+        format = "{:%a,  %b  %d}"
+
+[nightlight]
+enabled = true
+
+[osd]
+offset_x = 32
+offset_y = 12
+
+[plugin_settings."alexander/screen-toolkit"]
+selected-ocr-lang = "eng+por"
+
+[plugin_settings."aristides/udiskie"]
+manager_placement = "attached"
+
+[plugin_settings."fel/ocr"]
+languages = "eng+por"
+
+[plugin_settings."noctalia/notes"]
+notes_dir = "/tmp/Notes"
+panel_placement = "attached"
+
+[plugin_settings."noctalia/screen_recorder"]
+video_source = "focused"
+
+[plugin_settings."noctalia/wallhaven"]
+api_key = "qtLIxlOdpS5mn95Lma3uh5dOGc2ReYVq"
+
+[plugin_settings."yuuto/arch-updater"]
+auto_check_hours = 12
+
+[plugins]
+enabled = [
+    "yugaaank/better-clock",
+    "noctalia/screen_recorder",
+    "yuuto/arch-updater",
+    "noctalia/wallhaven",
+    "aristides/udiskie"
+]
+
+[shell]
+avatar_path = "/home/ry/Pictures/zelda.jpg"
+button_borders = false
+card_borders = false
+font_family = "Open Sans"
+password_style = "random"
+polkit_agent = true
+popup_borders = false
+
+    [shell.launcher]
+    categories = false
+    category_icons_only = true
+    show_session_button = false
+    show_settings_button = false
+    width = 680
+
+    [shell.panel]
+    clipboard_placement = "attached"
+    launcher_placement = "attached"
+    polkit_placement = "attached"
+
+    [shell.screen_corners]
+    enabled = true
+
+    [shell.screenshot]
+    annotate = true
+    directory = "/home/ry/Pictures/Screenshots"
+
+    [shell.session]
+    show_shortcuts = false
+
+        [[shell.session.actions]]
+        action = "lock"
+        countdown_seconds = 0.0
+        enabled = true
+        shortcut = "1"
+        variant = "default"
+
+        [[shell.session.actions]]
+        action = "logout"
+        countdown_seconds = 0.0
+        enabled = true
+        shortcut = "2"
+        variant = "default"
+
+        [[shell.session.actions]]
+        action = "lock_and_suspend"
+        countdown_seconds = 0.0
+        enabled = true
+        shortcut = "3"
+        variant = "default"
+
+        [[shell.session.actions]]
+        action = "reboot"
+        countdown_seconds = 0.0
+        enabled = true
+        shortcut = "4"
+        variant = "default"
+
+        [[shell.session.actions]]
+        action = "command"
+        command = "poweroff"
+        countdown_seconds = 0.0
+        enabled = true
+        glyph = "power"
+        label = "Shut Down"
+        shortcut = "5"
+        variant = "destructive"
+
+[theme]
+builtin = "Ayu"
+community_palette = "ADW"
+mode = "dark"
+source = "wallpaper"
+wallpaper_scheme = "vibrant"
+
+    [theme.templates]
+    builtin_ids = [ "gtk3", "gtk4", "hyprland", "kitty", "qt" ]
+    community_ids = [ "antigravity", "zen-browser", "neovim", "obsidian", "vscode", "yazi" ]
+
+[wallpaper]
+directory = "/home/ry/Pictures/Wallpapers"
+
+    [wallpaper.default]
+    path = "/home/ry/Pictures/Wallpapers/hutao_cool.jpg"
+
+    [wallpaper.last]
+    path = "/home/ry/Pictures/Wallpapers/hutao_cool.jpg"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/ry/Pictures/Wallpapers/hutao_cool.jpg"
+
+    [[wallpaper.favorite]]
+    builtin_palette = "Ayu"
+    palette_source = "builtin"
+    path = "/home/ry/Pictures/Wallpapers/nozomi-hakari-cards.jpg"
+    theme_mode = "dark"
+
+[widget.battery]
+display_mode = "graphic"
+
+[widget.date]
+font_scale = 0.90000000000000002
+font_weight = 400
+format = "{:%a %d}"
+
+[widget.keyboard_layout]
+hide_when_single_layout = true
+
+[widget.recorder]
+type = "noctalia/screen_recorder:recorder"
+
+[widget.spacer_2]
+type = "spacer"
+
+[widget.widget]
+type = "yuuto/arch-updater:widget"
+
+[widget.workspaces]
+active_pill_size = 3.3000000000000003
+pill_scale = 0.70000000000000007
+show_labels = false
