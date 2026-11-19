@@ -24,7 +24,7 @@ See the oficial site for the installation and configuration
 
 ### SDDM with Pixie theme
 
-**Install SDDM:** `sudo pacman -S sddm`
+**Install dependencies:** `yay -S sddm tomlq --needed`
 
 Follow their step by step: https://github.com/xCaptaiN09/pixie-sddm
 
